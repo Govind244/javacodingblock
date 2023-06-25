@@ -1,0 +1,54 @@
+/*
+It is Alex’s birthday and she wants to go shopping. She only has ‘A’ units of money and she wants to spend all of her money. However, she can only purchase one kind of item. She goes to a shop which has ‘n’ types items with prices A0,A1,A2,…,An-1. The shopkeeper claims that he has at least ‘k’ items she can choose from. Help her find out if the shopkeeper is correct or not.
+
+Input Format
+The first line contains an integer ‘n’ denoting the number of items in the shop. The second line contains ‘n’ space-separated integers describing the respective price of each item. The third line contains an integer ‘q’ denoting the number of queries. Each of the subsequent lines contains two space-separated integers ‘A’ and ‘k’
+
+Sample Input
+4
+100 200 400 100
+6
+100 2
+200 3
+500 4
+600 4
+800 4
+1200 1
+Sample Output
+Yes
+Yes
+No
+No
+Yes
+Yes
+*/
+
+import java.util.*;
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();          // size of array
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();         // elements of array
+        }
+        int q=sc.nextInt();            // no. of queries 
+        while(q--!=0){
+            int amount = sc.nextInt(); // money 
+            int k=sc.nextInt();        // at least items
+            int count = 0;
+            for(int i=0;i<n;i++){
+                if(amount % arr[i] == 0){
+                    count++;
+                }
+            } 
+            if(count >= k){
+                System.out.println("Yes");
+
+            }else{
+                System.out.println("No");
+            }
+        }
+	}
+}
