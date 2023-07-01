@@ -18,7 +18,7 @@ public class Main
         int x[] = new int[n];            
         // int x[] = {7,9,6,8,3,7,8,6,9};
         for(int i=0; i<n; i++){   
-            x[i] = sc.nextInt();        // in[put array elements]  
+            x[i] = sc.nextInt();        // input array elements  
         }    
         int ans = 0;
         for(int i=0; i<x.length; i++){        
