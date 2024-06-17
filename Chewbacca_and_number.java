@@ -1,6 +1,11 @@
 /*
 input = 4545
-o/p = 4444
+o/p = 4444    
+
+this sol. will remove leading '0' to none value 
+i/p = 02560
+o/p = 2430
+
 */
 
 import java.util.*;
@@ -31,3 +36,35 @@ public class Main
         System.out.println(num);
 	}
 }
+
+
+
+
+/* other way
+this sol. will convert leading '0' to 9 
+i/p = 02560
+o/p = 92430
+
+
+*/
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        // System.out.println("Try programiz.pro");
+        Scanner sc = new Scanner(System.in);
+        char[] a = sc.next().toCharArray();
+        
+        for(int i=0;i<a.length; i++){
+            if(a[i] > '4'){
+                a[i] = (char)('9'-a[i]+'0');
+            }
+            if(a[0]=='0'){
+                a[0]='9';
+            }
+        }
+            System.out.println(a);
+    }
+}
+
+
